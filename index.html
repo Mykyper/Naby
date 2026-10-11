@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1a0d14">
+  <meta name="color-scheme" content="dark">
+
+  <title>Pour toi — Une lettre qui vient du cœur</title>
+  <meta name="description" content="Une lettre scellée, des souvenirs, et tout ce que je n'ai jamais osé te dire.">
+  <meta name="author" content="Pour toi, toujours ♥">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pour toi 🌹">
+  <meta property="og:description" content="Une lettre scellée, rien que pour toi.">
+  <meta property="og:locale" content="fr_FR">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='16' width='64' height='64' fill='%231a0d14'/%3E%3Cpath d='M32 51S11 39 11 23c0-11 14-15 21-5 7-10 21-6 21 5 0 16-21 28-21 28Z' fill='%23e8a1b3'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Parisienne&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Ciel étoilé -->
+  <canvas class="stars" aria-hidden="true"></canvas>
+
+  <!-- Lueur romantique en fond -->
+  <div class="aura" aria-hidden="true">
+    <span class="aura-blob aura-1"></span>
+    <span class="aura-blob aura-2"></span>
+    <span class="aura-blob aura-3"></span>
+  </div>
+
+  <!-- Pétales -->
+  <div class="petals" aria-hidden="true">
+    <i class="petal"></i><i class="petal"></i><i class="petal"></i>
+    <i class="petal"></i><i class="petal"></i><i class="petal"></i>
+    <i class="petal"></i><i class="petal"></i>
+  </div>
+
+  <main>
+    <!-- ══════════ SCÈNE 1 : L'ENVELOPPE ══════════ -->
+    <section class="scene active" id="scene-envelope" aria-labelledby="title-envelope">
+      <div class="envelope-stage">
+        <p class="chapter" aria-hidden="true">Chapitre I</p>
+        <h1 class="visually-hidden" id="title-envelope">Une lettre pour toi</h1>
+
+        <p class="whisper">
+          <span class="script">Il y a</span> quelque chose que je garde pour toi…
+        </p>
+
+        <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Ouvrir la lettre">
+          <div class="envelope-back"></div>
+          <div class="envelope-letter">
+            <span class="letter-peek script">Pour toi ♥</span>
+          </div>
+          <div class="envelope-front"></div>
+          <div class="envelope-flap"></div>
+          <div class="wax-seal" aria-hidden="true">♥</div>
+        </div>
+
+        <p class="tap-hint" id="tapHint">Touche l'enveloppe pour l'ouvrir</p>
+      </div>
+    </section>
+
+    <!-- ══════════ SCÈNE 2 : LES FLEURS ══════════ -->
+    <section class="scene" id="scene-flowers" aria-labelledby="title-flowers">
+      <div class="chapter-card">
+        <p class="chapter">Chapitre II</p>
+        <h2 id="title-flowers" class="headline">
+          <span class="script">Un bouquet</span><br>pour toi
+        </h2>
+
+        <div class="bouquet" aria-hidden="true">
+          <div class="rose rose-1"></div>
+          <div class="rose rose-2"></div>
+          <div class="rose rose-3"></div>
+          <div class="rose rose-4"></div>
+          <div class="rose rose-5"></div>
+          <div class="stem stem-1"></div>
+          <div class="stem stem-2"></div>
+          <div class="stem stem-3"></div>
+        </div>
+
+        <p class="prose">
+          Si je pouvais, je t'offrirais un jardin entier.
+          En attendant, ces roses-là ne faneront jamais —
+          elles vivent ici, pour toi.
+        </p>
+
+        <button class="btn-primary" id="toMemories" type="button">
+          Voir nos souvenirs <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ══════════ SCÈNE 3 : LES SOUVENIRS ══════════ -->
+      <!-- ══════════ SCÈNE 3 : LES SOUVENIRS ══════════ -->
+       <!-- ══════════ SCÈNE 3 : LES SOUVENIRS ══════════ -->
+    <section class="scene" id="scene-memories" aria-labelledby="title-memories">
+      <div class="chapter-card wide">
+        <p class="chapter">Chapitre III</p>
+        <h2 id="title-memories" class="headline">
+          <span class="script">Nos souvenirs</span>
+        </h2>
+        <p class="prose">
+          Huit petits instants, figés pour toujours.
+          <br>
+          <em>Touche-en un pour le revoir en grand.</em>
+        </p>
+
+        <div class="polaroids" id="polaroids">
+
+          <!-- ───── 4 PHOTOS ───── -->
+          <figure class="polaroid" data-type="photo" data-src="photos/nabyphoto1.jpg">
+            <img src="photos/nabyphoto1.jpg" alt="Notre sourire préféré"
+                 loading="lazy"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+            <div class="photo-placeholder" style="display:none;">♡</div>
+            <span class="play-badge" aria-hidden="true">♥</span>
+            
+          </figure>
+
+          <figure class="polaroid" data-type="photo" data-src="photos/nabyphoto2.jpg">
+            <img src="photos/nabyphoto2.jpg" alt="Un beau moment"
+                 loading="lazy"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+            <div class="photo-placeholder" style="display:none;">♡</div>
+            <span class="play-badge" aria-hidden="true">♥</span>
+            
+          </figure>
+
+          <figure class="polaroid" data-type="photo" data-src="photos/nabyphoto3.jpg">
+            <img src="photos/nabyphoto3.jpg" alt="Nous deux"
+                 loading="lazy"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+            <div class="photo-placeholder" style="display:none;">♡</div>
+            <span class="play-badge" aria-hidden="true">♥</span>
+           
+          </figure>
+
+          <figure class="polaroid" data-type="photo" data-src="photos/nabyphoto4.jpg">
+            <img src="photos/nabyphoto4.jpg" alt="À jamais"
+                 loading="lazy"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+            <div class="photo-placeholder" style="display:none;">♡</div>
+            <span class="play-badge" aria-hidden="true">♥</span>
+           
+          </figure>
+
+          <!-- ───── 4 VIDÉOS ───── -->
+                    <figure class="polaroid" data-type="video" data-src="videos/nabydeo1.mp4">
+            <video class="polaroid-video" muted playsinline preload="metadata"
+                   src="videos/nabydeo1.mp4"></video>
+            <span class="play-badge" aria-hidden="true">▶</span>
+           
+          </figure>
+
+          <figure class="polaroid" data-type="video" data-src="videos/nabydeo2.mp4">
+            <video class="polaroid-video" muted playsinline preload="metadata"
+                   src="videos/nabydeo2.mp4"></video>
+            <span class="play-badge" aria-hidden="true">▶</span>
+            
+          </figure>
+
+          <figure class="polaroid" data-type="video" data-src="videos/nabydeo3.mp4">
+            <video class="polaroid-video" muted playsinline preload="metadata"
+                   src="videos/nabydeo3.mp4"></video>
+            <span class="play-badge" aria-hidden="true">▶</span>
+            
+          </figure>
+
+          <figure class="polaroid" data-type="video" data-src="videos/nabydeo4.mp4">
+            <video class="polaroid-video" muted playsinline preload="metadata"
+                   src="videos/nabydeo4.mp4"></video>
+            <span class="play-badge" aria-hidden="true">▶</span>
+            
+          </figure>
+
+        </div>
+
+        <input id="photoInput" type="file" accept="image/*" multiple hidden>
+       
+
+        <button class="btn-primary" id="toReasons" type="button">
+          Ce que j'aime chez toi <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ══════════ SCÈNE 4 : CE QUE J'AIME CHEZ TOI ══════════ -->
+      <!-- ══════════ SCÈNE 4 : CE QUE J'AIME CHEZ TOI ══════════ -->
+    <section class="scene" id="scene-reasons" aria-labelledby="title-reasons">
+      <div class="chapter-card">
+        <p class="chapter">Chapitre IV</p>
+        <h2 id="title-reasons" class="headline">
+          <span class="script">Ce que j'aime</span><br>chez toi
+        </h2>
+
+        <p class="prose">
+          Il y a mille petites choses. En voici quelques-unes…
+          <br>
+          <em>Touche la boîte pour en découvrir une.</em>
+        </p>
+
+        <!-- Boîte à raisons -->
+        <div class="reasons-box" id="reasonsBox" role="button" tabindex="0"
+             aria-label="Découvrir une raison">
+          <div class="box-lid" aria-hidden="true"></div>
+          <div class="box-body" aria-hidden="true">
+            <span class="box-heart">♥</span>
+          </div>
+
+          <div class="reason-card" id="reasonCard" aria-live="polite">
+            <span class="reason-number" id="reasonNumber">1</span>
+            <p class="reason-text" id="reasonText">
+              Touche la boîte…
+            </p>
+          </div>
+        </div>
+
+        <!-- Compteur de raisons -->
+        <p class="reasons-counter">
+          <span id="reasonsCount">0</span>
+          <span class="reasons-total">/ 12 raisons</span>
+        </p>
+
+        <!-- Progression des raisons -->
+        <div class="reasons-dots" id="reasonsDots" aria-hidden="true"></div>
+
+        <!-- Bouton retour au début -->
+        <div class="letter-actions">
+          <button class="btn-ghost" id="restart" type="button">
+            Revoir depuis le début
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ SCÈNE 5 : LA LETTRE ══════════ -->
+   
+  </main>
+
+  <!-- Progression -->
+    <!-- Progression -->
+  <nav class="progress" aria-label="Progression">
+    <i class="dot on"></i><i class="dot"></i><i class="dot"></i>
+    <i class="dot"></i>
+  </nav>
+    <!-- ══════════ MODALE VIDÉO ══════════ -->
+    <!-- ══════════ MODALE PHOTO / VIDÉO ══════════ -->
+  <div class="media-modal" id="mediaModal" hidden aria-modal="true" role="dialog" aria-label="Aperçu">
+    <div class="media-modal-backdrop" data-close></div>
+    <div class="media-modal-content">
+      <button class="media-modal-close" id="mediaClose" type="button" aria-label="Fermer">✕</button>
+
+      <img id="modalImage" class="modal-image" alt="" hidden>
+      <video id="modalVideo" class="modal-video" controls playsinline preload="metadata" hidden></video>
+
+      <p class="media-modal-caption" id="modalCaption"></p>
+    </div>
+  </div>
+</body>
+</html>
